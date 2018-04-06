@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>심야서점</title>
+        <base href="/">
+        <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../style.css">
+        <script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../libs/angular/angular.min.js"></script>
+        <script type="text/javascript" src="../libs/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="../libs/angular-resource/angular-resource.min.js"></script>
+        <script type="text/javascript" src="../libs/angular-animate/angular-animate.min.js"></script>
+        <script type="text/javascript" src="../client.config.js"></script>
+        <script type="text/javascript" src="../modules/main.client.module.js"></script>
+        <script type="text/javascript" src="../modules/book.client.module.js"></script>
+        <script type="text/javascript" src="../modules/board.client.module.js"></script>
+        <script type="text/javascript" src="../modules/order.client.module.js"></script>
+        <script type="text/javascript" src="../routes/main.client.routes.js"></script>
+        <script type="text/javascript" src="../routes/book.client.routes.js"></script>
+        <script type="text/javascript" src="../routes/board.client.routes.js"></script>
+        <script type="text/javascript" src="../routes/order.client.routes.js"></script>
+        <script type="text/javascript" src="../models/book.client.model.js"></script>
+        <script type="text/javascript" src="../models/board.client.model.js"></script>
+        <script type="text/javascript" src="../models/order.client.model.js"></script>
+        <script type="text/javascript" src="../services/book.client.service.js"></script>
+        <script type="text/javascript" src="../services/board.client.service.js"></script>
+        <script type="text/javascript" src="../services/order.client.service.js"></script>
+    </head>
+    <body ng-app="mainApp">
+        <div class="container">
+            <header>
+                <div class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar">
+                                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                            </button>
+                            <a class="navbar-brand" href="/">심야서점</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="header-navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/">베스트셀러</a></li>
+                                <li><a href="/">추천도서</a></li>
+                                <li><a href="/book/list">신간도서</a></li>
+                                <li><a href="/board/list">고객게시판</a></li>
+                                <li><a href="/"><span class="glyphicon glyphicon-user"></span> 로그인</a></li>
+                                <li><a href="/"><span class="glyphicon glyphicon-shopping-cart"></span> 장바구니</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <ng-view></ng-view>
+            <footer>
+                <div class="well">
+                    <p class="text-center">&copy; 2017 심야서점 All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

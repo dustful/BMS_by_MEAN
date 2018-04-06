@@ -1,0 +1,25 @@
+{
+  "name": "bms_mean",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "dustful <dustful@naver.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.7",
+    "angular-route": "^1.6.7",
+    "angular-resource": "^1.6.8",
+    "angular-animate": "^1.6.8"
+  }
+}

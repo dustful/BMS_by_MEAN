@@ -1,0 +1,25 @@
+<section>
+    <article>
+        <div class="page-header">
+            <h1>신간 도서</h1>
+        </div>
+        <div class="row" ng-switch on="selection">
+            <div class="col-xs-6 col-md-3" ng-switch-when="true" ng-repeat="book in bookData">
+                <div class="thumbnail">
+                    <a href="/book/detail/{{book._id}}">
+                        <img alt="상품이미지" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjU5LjU2MjUiIHk9IjkwIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MTcxeDE4MDwvdGV4dD48L2c+PC9zdmc+">
+                    </a>
+                    <div class="caption">
+                        <p><a href="/book/detail/{{book._id}}">{{book.bookname}}</a></p>
+                        <p>{{book.author}}</p>
+                        <p>{{book.publisher}}</p>
+                        <p>{{book.price | number}}원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12" ng-switch-when="false">
+                <div class="alert alert-warning text-center" role="alert"><h3>{{message}}</h3></div>
+            </div>
+        </div>
+    </article>
+</section>

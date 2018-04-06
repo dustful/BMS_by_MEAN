@@ -1,0 +1,55 @@
+<section>
+    <article>
+        <div class="page-header">
+            <h1>상품상세</h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="thumbnail">
+                    <img alt="상품이미지" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkyLjQ2MDkzNzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMXB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjI0MngyMDA8L3RleHQ+PC9nPjwvc3ZnPg==">
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">{{bookData.bookname}}</h4>
+                    </div>
+                    <table class="table">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="75%">
+                        </colgroup>
+                        <tr>
+                            <th class="active text-right">저자</th>
+                            <td>{{bookData.author}}</td>
+                        </tr>
+                        <tr>
+                            <th class="active text-right">출판사</th>
+                            <td>{{bookData.publisher}}</td>
+                        </tr>
+                        <tr>
+                            <th class="active text-right">가격</th>
+                            <td>{{bookData.price | number}}원</td>
+                        </tr>
+                    </table>
+                    <div class="panel-body">
+                        <div class="btn-group btn-group-justified" role="group">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary">바로 구입</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default">장바구니에 추가</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <fieldset>
+                    <legend>책 소개</legend>
+                    <p class="text-justify" style="white-space: pre-wrap;">{{bookData.introduction}}</p>
+                </fieldset>
+            </div>
+        </div>
+    </article>
+</section>

@@ -1,0 +1,77 @@
+<section>
+    <article>
+        <ol class="breadcrumb">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></a></li>
+            <li><a href="/board/list">고객게시판</a></li>
+            <li class="active">게시물상세</li>
+        </ol>
+        <div class="page-header">
+            <h1>게시물 상세</h1>
+        </div>
+        <div class="form-group pull-right">
+            <a class="btn btn-primary" href="/board/modify/{{boardData._id}}">게시물 수정</a>
+            <button type="button" class="btn btn-danger" ng-click="deleteBoard()">게시물 삭제</button>
+        </div>
+        <div class="clearfix"></div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{boardData.subject}}</h3>
+            </div>
+            <table class="table">
+                <colgroup>
+                    <col width="20%">
+                    <col width="80%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th class="bg-info text-right">작성자</th>
+                        <td>{{boardData.writer}}</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-info text-right">작성일시</th>
+                        <td>{{boardData.regdate | date : 'yyyy-MM-dd HH:mm:ss'}}</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-info text-right">조회수</th>
+                        <td>{{boardData.hit | number}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="panel-body">
+                <p class="text-justify" style="white-space: pre-wrap;">{{boardData.content}}</p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">댓글 쓰기</div>
+            <div class="panel-body">
+                <form class="form-horizontal" ng-submit="writeReply()">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="re_writer">작성자</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="re_writer" name="re_writer" ng-model="boardData.reply.writer" placeholder="작성자를 입력하세요">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="re_content">내용</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" rows="4" id="re_content" name="re_content" ng-model="boardData.reply.content" placeholder="내용을 입력하세요"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button class="btn btn-primary" type="submit">작성 완료</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div ng-switch on="selection">
+            <div class="panel-body" ng-switch-when="true" ng-repeat="board in boardData">
+                {{board.reply.writer}}, {{board.reply.content}}
+            </div>
+            <div class="alert alert-warning" ng-switch-when="false">
+                <p class="text-center">{{message}}</p>
+            </div>
+        </div>
+    </article>
+</section>

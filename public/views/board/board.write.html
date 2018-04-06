@@ -1,0 +1,32 @@
+<section>
+    <article>
+        <ol class="breadcrumb">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a href="/board/list">고객게시판</a></li>
+            <li class="active">게시물쓰기</li>
+        </ol>
+        <div class="page-header">
+            <h1>게시물 쓰기</h1>
+        </div>
+        <form method="post" ng-submit="saveBoard()">
+            <div class="row">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="subject">제목</label>
+                    <input type="text" name="subject" id="subject" ng-model="boardData.subject" autofocus class="form-control" placeholder="제목을 입력하세요">
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="writer">작성자</label>
+                    <input type="text" name="writer" id="writer" ng-model="boardData.writer" class="form-control" placeholder="작성자를 입력하세요">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content">내용</label>
+                <textarea name="content" id="content" rows="12" ng-model="boardData.content" class="form-control" placeholder="내용을 입력하세요"></textarea>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-lg">작성 완료</button>
+                <!-- <button type="button" class="btn btn-default">취소</button> -->
+            </div>
+        </form>
+    </article>
+</section>

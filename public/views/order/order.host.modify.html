@@ -1,0 +1,52 @@
+<section>
+    <article>
+        <div class="page-header">
+            <h1>상품정보수정</h1>
+        </div>
+        <form method="post" ng-submit="updateBook()">
+            <div class="row">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="bookimg">도서이미지</label>
+                    <input type="file" name="bookimg" id="bookimg" class="form-control" placeholder="도서이미지를 입력하세요">
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="bookname">도서명</label>
+                    <input type="text" name="bookname" id="bookname" ng-model="bookData.bookname" autofocus class="form-control" placeholder="도서명을 입력하세요">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="author">저자</label>
+                    <input type="text" name="author" id="author" ng-model="bookData.author" class="form-control" placeholder="저자를 입력하세요">
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="publisher">출판사</label>
+                    <input type="text" name="publisher" id="publisher" ng-model="bookData.publisher" class="form-control" placeholder="출판사를 입력하세요">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="price">가격</label>
+                    <input type="number" name="price" id="price" ng-model="bookData.price" class="form-control" placeholder="가격을 입력하세요">
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="qty">수량</label>
+                    <input type="number" name="qty" id="qty" ng-model="bookData.qty" class="form-control" placeholder="수량을 입력하세요">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="introduction">도서소개</label>
+                <textarea name="introduction" id="introduction" rows="12" ng-model="bookData.introduction" class="form-control" placeholder="도서소개를 입력하세요"></textarea>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="recommendation" id="recommendation" ng-model="bookData.recommendation"> 추천도서로 등록
+                </label>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-lg">수정하기</button>
+                <!-- <button type="button" class="btn btn-default">취소</button> -->
+            </div>
+        </form>
+    </article>
+</section>

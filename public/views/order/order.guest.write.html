@@ -1,0 +1,93 @@
+<section>
+    <article>
+        <ol class="breadcrumb">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></a></li>
+            <li class="active">상품주문</li>
+        </ol>
+        <div class="page-header">
+            <h1>상품 주문</h1>
+        </div>
+        <form method="post" ng-submit="saveOrder()">
+            <input type="hidden" ng-model="orderData.product">
+            <div class="panel panel-info">
+                <div class="panel-heading">선택하신 상품</div>
+                <table class="table table-bordered">
+                    <colgroup>
+                        <col width="40%">
+                        <col width="20%">
+                        <col width="20%">
+                        <col width="20%">
+                    </colgroup>
+                    <thead>
+                        <tr class="active">
+                            <th class="text-center">도서명</th>
+                            <th class="text-center">저자</th>
+                            <th class="text-center">출판사</th>
+                            <th class="text-center">가격</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">{{orderData.bookname}}</td>
+                            <td class="text-center">{{orderData.author}}</td>
+                            <td class="text-center">{{orderData.publisher}}</td>
+                            <td class="text-center">{{orderData.price | number}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="panel-body">
+                    <h4 class="text-danger text-center">총 결제 금액 : {{orderData.price | number}}원 + 3,000원(배송비) = {{orderData.price + 3000 | number}}원</h4>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">주문하시는 분</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-xs-12 col-md-6">
+                            <label for="ordername">주문자명</label>
+                            <input type="text" name="ordername" id="ordername" ng-model="orderData.ordername" autofocus class="form-control" placeholder="주문자명을 입력하세요">
+                        </div>
+                        <div class="form-group col-xs-12 col-md-6">
+                            <label for="ordercontact">연락처</label>
+                            <input type="text" name="ordercontact" id="ordercontact" ng-model="orderData.ordercontact" class="form-control" placeholder="연락처를 입력하세요">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">받으시는 분</div>
+                <div class="panel-body">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="chkInfo" id="chkInfo" ng-model="chkInfo" ng-click="copyOrderInfo()"> 주문자와 동일함
+                        </label>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-12 col-md-6">
+                            <label for="receivername">수신자명</label>
+                            <input type="text" name="receivername" id="receivername" ng-model="orderData.receivername" class="form-control" placeholder="수신자명을 입력하세요">
+                        </div>
+                        <div class="form-group col-xs-12 col-md-6">
+                            <label for="receivercontact">연락처</label>
+                            <input type="text" name="receivercontact" id="receivercontact" ng-model="orderData.receivercontact" class="form-control" placeholder="연락처를 입력하세요">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="receiveraddr">주소</label>
+                        <input type="text" name="receiveraddr" id="receiveraddr" ng-model="orderData.receiveraddr" class="form-control" placeholder="주소를 입력하세요">
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">입금 안내</div>
+                <div class="panel-body">
+                    <p>카카오뱅크 123456-78-901234 (예금주 : 심야서점)</p>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-lg">주문하기</button>
+                <!-- <button type="button" class="btn btn-default">취소</button> -->
+            </div>
+        </form>
+    </article>
+</section>
