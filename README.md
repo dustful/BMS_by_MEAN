@@ -1,4 +1,4 @@
-# MEAN_BMS
+# BMS by MEAN stack
 Welcome!
 
 This is a book management system for bookstore that based on MEAN stack.
